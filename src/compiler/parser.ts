@@ -740,8 +740,10 @@ namespace ts {
             switch (scriptKind) {
                 case ScriptKind.JS:
                 case ScriptKind.JSX:
-                case ScriptKind.JSON:
                     contextFlags = NodeFlags.JavaScriptFile;
+                    break;
+                case ScriptKind.JSON:
+                    contextFlags = NodeFlags.JavaScriptFile | NodeFlags.JsonFile;
                     break;
                 default:
                     contextFlags = NodeFlags.None;

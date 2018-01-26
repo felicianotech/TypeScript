@@ -2551,8 +2551,12 @@ namespace ts {
     }
 
     export interface JsonSourceFile extends SourceFile {
-        jsonObject?: ObjectLiteralExpression;
+        statements: NodeArray<JsonObjectLiteralExpressionStatement>;
         extendedSourceFiles?: string[];
+    }
+
+    export interface JsonObjectLiteralExpressionStatement extends ExpressionStatement {
+        expression: ObjectLiteralExpression;
     }
 
     export interface ScriptReferenceHost {

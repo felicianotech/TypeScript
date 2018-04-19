@@ -13,9 +13,11 @@ base: &base
     - checkout
     - run: |
         git submodule update --init --recursive
+        sudo npm install -g npm@latest
+        npm --version
         npm uninstall typescript --no-save
         npm uninstall tslint --no-save
-        time npm install
+        time npm ci
         #npm update Appeared in Jenkins only
         npm test
 

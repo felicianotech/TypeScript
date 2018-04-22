@@ -5,20 +5,6 @@ workflows:
       - node9
       - node8
       - node6
-  nightly:
-    triggers:
-      - schedule:
-          cron: "0 8 * * *"
-          filters:
-            branches:
-              only: master
-    jobs:
-      - node9:
-          context: nightlies
-      - node8:
-          context: nightlies
-      - node6:
-          context: nightlies
 
 base: &base
   environment:
